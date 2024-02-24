@@ -490,7 +490,7 @@ ros2 topic info <topic_name>
 
 #### 2.echo
 
-读取发布的topic
+读取该topic接收到的内容
 
 ```
 ros2 topic echo <topic_name>
@@ -525,4 +525,57 @@ ros2 interface list
 
 
 
-The `.msg` files are composed of two parts: **fields** and **constants**. 
+The `.msg` files are composed of two parts: **fields** and **constants**. 字段和常数。
+
+
+
+显示topic中包含的数据类型和数量
+
+```
+ros2 interface show <interface_name>
+```
+
+his command shows you a prototype interface so that you can use it.
+
+```
+ros2 interface proto geometry_msgs/msg/Twist
+```
+
+To publish a message in a particular Topic, use the following command:
+
+```
+ros2 topic pub /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.1, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.0}}"
+```
+
+通过接口向topic中发送信息。Interface规范了topic中信息的类型？
+
+The **`ros2 topic pub`** command is used to publish messages to a Topic. The command structure is as follows:
+
+```
+ros2 topic pub <topic_name> <interface_name> <message>
+```
+
+只执行一次：
+
+```
+ros2 topic pub --once /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"
+```
+
+
+
+#### 4.Define a Topic
+
+**Imagine a Topic as a pipe through which information flows, a channel where nodes can read or write information**.
+
+### 3.2  Topic Publisher
+
+#### 1.  Create a Simple Publisher Node
+
+#####  Create a new package named **publisher_pkg**
+
+```
+ros2 pkg create --build-type ament_python publisher_pkg --dependencies rclpy std_msgs geometry_msgs
+```
+
+#####  Create a new file named **simple_publisher.py**
+
