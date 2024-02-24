@@ -569,13 +569,163 @@ ros2 topic pub --once /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0, y: 0.0
 
 ### 3.2  Topic Publisher
 
-#### 1.  Create a Simple Publisher Node
+#### 创建Simple Publisher Node
 
-#####  Create a new package named **publisher_pkg**
+负责发送信息，控制turtlebot的角度和速度
+
+#####  创建package：publisher_pkg
 
 ```
 ros2 pkg create --build-type ament_python publisher_pkg --dependencies rclpy std_msgs geometry_msgs
 ```
 
-#####  Create a new file named **simple_publisher.py**
+#####  创建代码文件 **simple_publisher.py**
 
+```python
+import rclpy
+# import the ROS2 python libraries
+from rclpy.node import Node
+# import the Twist interface from the geometry_msgs package
+from geometry_msgs.msg import Twist
+
+class SimplePublisher(Node):
+
+    def __init__(self):
+        # Here you have the class constructor
+        # call super() in the constructor to initialize the Node object
+        # the parameter you pass is the node name
+        super().__init__('simple_publisher')
+        # create the publisher object
+        # 创建发布者对象
+        # in this case, the publisher will publish on /cmd_vel Topic with a queue size of 10 messages.
+        # use the Twist module for /cmd_vel Topic
+        # self.publisher_ = self.create_publisher(信息模型（接口）, '目标topic名', qu're'r)
+        self.publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
+        
+        # define the timer period for 0.5 seconds
+        timer_period = 0.5
+        # create a timer sending two parameters:
+        # - the duration between 2 callbacks (0.5 seconds)
+        # - the timer function (timer_callback)
+        # 创建timer self.create_timer(时间间隔, 回调函数)
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+
+    def timer_callback(self):
+        # 创建回调函数
+        # Here you have the callback method
+        # create a Twist message
+       
+        # 定义massage 类型为 twist
+        msg = Twist()
+        # define the linear x-axis velocity of /cmd_vel Topic parameter to 0.5
+        msg.linear.x = 0.5
+        # define the angular z-axis velocity of /cmd_vel Topic parameter to 0.5
+        msg.angular.z = 0.5
+        
+        # Publish the message to the Topic
+        # 发布信息
+        self.publisher_.publish(msg)
+        # Display the message on the console
+        self.get_logger().info('Publishing: "%s"' % msg)
+            
+def main(args=None):
+    # initialize the ROS communication
+    rclpy.init(args=args)
+    # declare the node constructor
+    # 实例化
+    simple_publisher = SimplePublisher()
+    # pause the program execution, waits for a request to kill the node (ctrl+c)
+    rclpy.spin(simple_publisher)
+    # Explicity destroys the node
+    simple_publisher.destroy_node()
+    # shutdown the ROS communication
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
+##### 创建launch文件
+
+```
+cd ~/ros2_ws/src/publisher_pkg
+mkdir launch
+cd ~/ros2_ws/src/publisher_pkg/launch
+touch publisher_pkg_launch_file.launch.py
+chmod +x publisher_pkg_launch_file.launch.py
+```
+
+##### 编译package
+
+```
+cd ~/ros2_ws
+colcon build --packages-select publisher_pkg
+source ~/ros2_ws/install/setup.bash
+```
+
+##### Launch Node
+
+```
+ros2 launch publisher_pkg publisher_pkg_launch_file.launch.py
+```
+
+
+
+### 3.3  Topic Subscriber
+
+#### 创建Simple Subscriber Node
+
+负责接收信息，接收雷达信号
+
+##### 创建**subscriber_pkg**
+
+##### 创建**simple_subscriber.py**
+
+```python
+import rclpy
+# import the ROS2 python libraries
+from rclpy.node import Node
+# import the LaserScan module from sensor_msgs interface
+from sensor_msgs.msg import LaserScan
+# import Quality of Service library, to set the correct profile and reliability to read sensor data.
+from rclpy.qos import ReliabilityPolicy, QoSProfile
+
+
+class SimpleSubscriber(Node):
+
+    def __init__(self):
+        # Here you have the class constructor
+        # call super() in the constructor to initialize the Node object
+        # the parameter you pass is the node name
+        super().__init__('simple_subscriber')
+        # create the subscriber object
+        # in this case, the subscriptor will be subscribed on /scan topic with a queue size of 10 messages.
+        # use the LaserScan module for /scan topic
+        # send the received info to the listener_callback method.
+        self.subscriber = self.create_subscription(
+            LaserScan,
+            '/scan',
+            self.listener_callback,
+            QoSProfile(depth=10, reliability=ReliabilityPolicy.RELIABLE))  # is the most used to read LaserScan data and some sensor data.
+
+    def listener_callback(self, msg):
+        # print the log info in the terminal
+        self.get_logger().info('I receive: "%s"' % str(msg))
+
+
+def main(args=None):
+    # initialize the ROS communication
+    rclpy.init(args=args)
+    # declare the node constructor
+    simple_subscriber = SimpleSubscriber()
+    # pause the program execution, waits for a request to kill the node (ctrl+c)
+    rclpy.spin(simple_subscriber)
+    # Explicity destroy the node
+    simple_subscriber.destroy_node()
+    # shutdown the ROS communication
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+```
