@@ -1,8 +1,14 @@
+# ROS2-Python
+
+## 2.Basic concept
+
+### 2.1什么是 Package
+
+
+
 ```
 source /opt/ros/humble/setup.bash
 ```
-
-
 
 ```
 ros2 launch <package_name> <launch_file>
@@ -22,7 +28,7 @@ Some packages might contain extra folders. For instance, the **`launch`** folder
 
 
 
-## 2.3  Create a Package
+### 2.3  Create a Package
 
 Usually, the **ROS2 workspace** directory is called **`ros2_ws`**.
 
@@ -35,7 +41,7 @@ cd ~/ros2_ws/
 pwd
 ```
 
-### 创建package
+#### 创建package
 
 进入src目录
 
@@ -57,7 +63,7 @@ Note also that we are specifying `ament_python` as the `build type`. This indica
 ros2 pkg create --build-type ament_python <package_name> --dependencies <package_dependency_1> <package_dependency_2>
 ```
 
-### 构建package
+#### 构建package
 
 ```
 cd ~/ros2_ws/
@@ -65,7 +71,7 @@ colcon build
 source install/setup.bash
 ```
 
-### 查看package
+#### 查看package
 
 ```
 ros2 pkg list
@@ -89,7 +95,7 @@ ros2_ws/
             ...
 ```
 
-## 2.4  Compile a Package
+### 2.4  Compile a Package
 
 注意 会编译整个src目录
 
@@ -107,7 +113,7 @@ colcon build --packages-select <package_name>
 
 
 
-## 2.5  What is a Launch File?
+### 2.5  What is a Launch File?
 
 ```python
 from launch import LaunchDescription
@@ -153,9 +159,9 @@ Within the `LaunchDescription` object, generate a node where you will provide th
 
 
 
-## First ROS2 Program
+### First ROS2 Program
 
-### 1.创建simple.py
+#### 1.创建simple.py
 
 ```python
 import rclpy
@@ -175,7 +181,7 @@ if __name__ == '__main__':
     main() #call the main function
 ```
 
-### 2.创建launch文件
+#### 2.创建launch文件
 
 在包目录下创建launch文件夹和launch文件：
 
@@ -202,7 +208,7 @@ def generate_launch_description():
     ])
 ```
 
-### 3.在工作空间目录下的setup.py:
+#### 3.在工作空间目录下的setup.py:
 
 Modify the setup.py file to generate an executable from your Python file.
 
@@ -242,7 +248,7 @@ setup(
 
 添加launch文件路径：(os.path.join('share', package_name), glob('launch/*.launch.py'))
 
-### 4.编译工作空间
+#### 4.编译工作空间
 
 ```
 cd ~/ros2_ws
@@ -252,9 +258,9 @@ source install/setup.bash
 
 
 
-## 创建setup.py 
+### 创建setup.py 
 
-### 1.entry point
+#### 1.entry point
 
 这段代码的主要目的是从刚才创建的脚本生成一个可执行文件。要做到这一点，需要使用一个名为entry_points的字典。在其中，可以找到一个名为console scripts的数组。
 
@@ -292,7 +298,7 @@ setup(
 
 
 
-### 2. Data files
+#### 2. Data files
 
 为了使colon在编译过程中可以找到launch文件，需要添加文件的路径
 
@@ -328,7 +334,7 @@ glob('launch/*.launch.py')：从**`my_package`**的 `launch/` 文件夹，安装
 
 
 
-## Ros Nodes
+### Ros Nodes
 
 查看nodes
 
@@ -435,10 +441,88 @@ ros2 node info <node_name>
   Action Clients:
 ```
 
-## Client Libraries
+### Client Libraries
 
 The ROS2 team currently maintains the following client libraries:
 
 - **`rclcpp`**: ROS2 client library for **C++**.
 - **`rclpy`**: ROS2 client library for **Python**.
 
+
+
+## 3.ROS Topic
+
+### 3.1Basic Topic commands
+
+显示当前环境中所有的topics
+
+```
+ros2 topic list
+```
+
+显示特定的topic
+
+```
+ros2 topic list | grep cmd_vel
+```
+
+
+
+#### 1.info
+
+详细信息
+
+```
+ros2 topic info /cmd_vel
+```
+
+Okay. Now, break down what you have got a little bit:
+
+- **Type:** Refers to the ROS2 interface associated with the Topic with which you need to work with this Topic. （接口）
+- **Publisher count:** Refers to the number of active Publishers connected to the Topic.
+- **Subscription count:** Refers to the number of active Subscribers connected to the Topic.
+
+```
+ros2 topic info <topic_name>
+```
+
+
+
+#### 2.echo
+
+读取发布的topic
+
+```
+ros2 topic echo <topic_name>
+```
+
+
+
+#### 3. Interface
+
+```
+ros2 interface list
+```
+
+
+
+ The interfaces are divided into the following groups:
+
+- **Messages:** Can be found as `.msg` files. They are simple text files that describe the fields of a ROS message. You can use them to generate source code for messages.
+
+- 使用它们为消息生成源代码。
+
+  
+
+- **Services:** Can be found as `.srv` files. They are composed of two parts: a request and a response. Both are message declarations.
+
+- 它们由两个部分组成：请求和答复。两者都是消息声明。
+
+
+
+- **Actions:** Can be found as `.action` files. They are composed of three parts: a goal, a result, and feedback. Each part contains a message declaration.
+- 它们由三个部分组成：目标，结果和反馈。每个部分都包含消息声明。
+
+
+
+The `.msg` files are composed of two parts: **fields** and **constants**. 
