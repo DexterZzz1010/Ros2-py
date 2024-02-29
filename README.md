@@ -1156,6 +1156,8 @@ int32 day
 
 ### 3.6  使用 Custom Interface
 
+**也就是自定义发布的信息的类型和内容。**
+
 #### 1. 创建新package**example36_pkg**
 
 注意 需要添加依赖 也就是之前创建的 Interface **custom_interfaces**
@@ -1340,7 +1342,7 @@ ros2 topic echo /age
 
 在使用Services时，你将有两个角色：客户端（Clients）和服务器（Server）。你可以有多个客户端使用相同的服务服务器，但每个服务只能有一个服务器。
 
-客户端发送request，服务器发送response
+**客户端发送request，服务器发送response**
 
 总而言之，如果需要实时流数据的广播，可能更适合使用Topics，
 
@@ -1349,6 +1351,8 @@ ros2 topic echo /age
 而如果需要一对一的请求和响应通信，可能更适合使用Services，
 
 但可能影响系统的并发性，且Services只有在被显式调用时才提供数据。
+
+![img](https://s3.eu-west-1.amazonaws.com/notebooks.ws/basic_ROS2/images/ros2-services.gif)
 
 ### 4.2  Basic Service Commands
 
@@ -1373,7 +1377,7 @@ ros2 service type /moving
 ros2 service type <service_name> 
 ```
 
-
+#### 查看interface
 
 ```
 ros2 interface show std_srvs/srv/Empty
@@ -1404,6 +1408,8 @@ ros2 service call /stop std_srvs/srv/Empty
 
 
 ### 4.3  创建 Service Client
+
+**客户端发送request，服务器发送response**
 
 #### **1. 创建新的package**  client_pkg
 
@@ -1460,6 +1466,9 @@ def main(args=None):
     # declare the node constructor
     client = ClientAsync()
     # run the send_request() method
+    # 发送请求
+    
+    
     client.send_request()
 
     while rclpy.ok():
@@ -1762,55 +1771,421 @@ ros2 launch client_pkg stop_client_launch_file.launch.py
 
 ### 4.4 Synchronous vs. Asynchronous Service Clients in ROS2
 
+同步实例：
+
+```python
+# initialize the ROS communication
+rclpy.init(args=args)
+# declare the node constructor
+client = ClientSync()
+# start the communication thread
+spin_thread = Thread(target=rclpy.spin, args=(client,))
+spin_thread.start()
+# run the send_request() method
+response = client.send_request()
+# Display the message on the console
+client.get_logger().info('Pretty message') 
+
+minimal_client.destroy_node()
+# shutdown the ROS communication
+rclpy.shutdown()
+```
+
+异步一般来说是绝对安全的，同步可能会带来死锁的问题。
+
+如果您使用过ROS1，您可能记得服务是同步的。现在使用ROS2，服务默认情况下是异步的。这并不意味着您不能拥有同步服务，但不建议这样做。
 
 
 
+### 4.5  Create a Service Server
+
+Server 接收request，发布response
+
+**一个Server要包括以下几个内容：**
+
+**type, name, and callback function**，回调函数包括publisher
 
 
 
+**任何request 都要通过回调函数接收**
+
+**任何response 都要通过回调函数发布**
+
+**在回调函数中，不仅可以接收和回复response，还可以publish message**
 
 
 
+/moving 这个server的代码：
+
+```python
+# import the Empty module from std_servs Service interface
+from std_srvs.srv import Empty
+# import the Twist module from geometry_msgs messages interface
+from geometry_msgs.msg import Twist
+# import the ROS2 Python client libraries
+import rclpy
+from rclpy.node import Node
+
+
+class Service(Node):
+
+    def __init__(self):
+        # Here you have the class constructor
+
+        # call the class constructor to initialize the node as service_moving
+        super().__init__('service_moving')
+        
+        # 创建Server对象 type, name, and callback function
+        # create the Service Server object
+        # defines the type, name, and callback function
+        self.srv = self.create_service(Empty, 'moving', self.empty_callback)
+        # create the Publisher object
+        # in this case, the Publisher will publish on /cmd_vel topic with a queue size of 10 messages.
+        
+        # 在publisher 定义发布信息的类型
+        # use the Twist module
+        self.publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
+        
+
+    def empty_callback(self, request, response):
+        # The callback function receives the self-class parameter, 
+        # received along with two parameters called request and response
+        # - receive the data by request
+        # - return a result as a response
+		
+        # create a Twist message
+        # 根据发布信息的类型，定义msg的内容
+        msg = Twist()
+        # define the linear x-axis velocity of /cmd_vel topic parameter to 0.3
+        msg.linear.x = 0.3
+        # define the angular z-axis velocity of /cmd_vel topic parameter to 0.3
+        msg.angular.z = 0.3
+        # Publish the message to the Topic
+        # 发布信息
+        self.publisher_.publish(msg)
+        # print a pretty message
+        self.get_logger().info('RUN ROBOT RUN!')
+        
+        
+        # return the response parameter
+        return response
+
+
+def main(args=None):
+    # initialize the ROS communication
+    rclpy.init(args=args)
+    # declare the node constructor
+    moving_service = Service()
+    # pause the program execution, waits for a request to kill the node (ctrl+c)
+    rclpy.spin(moving_service)
+    # shutdown the ROS communication
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+```
+
+- The Service uses an **`Empty`** type
+- The name of the Service is **`moving`**
+- The Service callback is **`empty_callback`**
+
+/stop 的代码：
+
+基本和/moving一样，msg内容和server名字不同。
+
+```python
+# import the empty module from std_servs Service interface
+from std_srvs.srv import Empty
+# import the Twist module from geometry_msgs messages interface
+from geometry_msgs.msg import Twist
+# import the ROS2 Python client libraries
+import rclpy
+from rclpy.node import Node
+
+
+class Service(Node):
+
+    def __init__(self):
+        # Here you have the class constructor
+
+        # call the class constructor to initialize the node as service_stop
+        super().__init__('service_stop')
+        # create the Service server object
+        # defines the type, name, and callback function
+        self.srv = self.create_service(Empty, 'stop', self.empty_callback)
+        # create the Publisher object
+        # in this case, the Publisher will publish on /cmd_vel topic with a queue size of 10 messages.
+        # use the Twist module
+        self.publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
+        
+
+    def empty_callback(self, request, response):
+        # The callback function receives the self-class parameter, 
+        # received along with two parameters called request and response
+        # - receive the data by request
+        # - return a result as a response
+
+        # create a Twist message
+        msg = Twist()
+        # define the linear x-axis velocity of /cmd_vel topic parameter to 0
+        msg.linear.x = 0.0
+        # define the angular z-axis velocity of /cmd_vel topic parameter to 0
+        msg.angular.z = 0.0
+        # Publish the message to the topic
+        self.publisher_.publish(msg)
+        # print a pretty message
+        self.get_logger().info('Stop there, Robot!')
+        
+        # return the response parameter
+        return response
+
+
+def main(args=None):
+    # initialize the ROS communication
+    rclpy.init(args=args)
+    # declare the node constructor  
+    service = Service()
+    # pause the program execution, waits for a request to kill the node (ctrl+c)
+    rclpy.spin(service)
+    # shutdown the ROS communication
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+```
 
 
 
+Based on the previous examples, make a Service that executes the following instructions:
+
+- Create a new package and call it **`exercise42_pkg`** with `rclpy`, `std_msgs`, `sensor_msgs`, `geometry_msgs`, and `std_srvs` as dependencies.
+- Use the previous Service Server codes to create a new Service Server that makes the robot turn right (as in the example of the **`/moving`** Service, but the opposite direction). But this time will be a little bit more difficult. You will use the Service **`SetBool`**, part of the **`std_srv`** package. It will work like this:
+  - When the request is **`true`**, the robot turns right.
+  - When the input is **`false`**, the robot stops!
+- Create the launch file to start your node.
+- Test your Service by calling it using the **`ros2 service call`** command.
 
 
 
+#### 1. 创建Package exercise42_pkg
+
+```
+ros2 pkg create exercise42_pkg --build-type ament_python --dependencies rclpy std_msgs geometry_msgs sensor_msgs std_srvs
+```
+
+#### 2. 创建exercise42.py
+
+Server type（Interface的类型）：SetBool
+
+```
+bool data # e.g. for hardware enabling / disabling
+---
+bool success   # indicate successful run of triggered service
+string message # informational, e.g. for error messages
+```
+
+SetBool ：	接收bool 类型的request （True/False）
+
+​						发送bool和string类型的response
+
+Server名字：moving_right
+
+回调函数：self.SetBool_callback  
+
+**在回调函数中，不仅可以接收和回复response，还可以publish message**
+
+```python
+# import the SetBool module from std_servs Service interface
+from std_srvs.srv import SetBool
+# import the Twist module from geometry_msgs messages interface
+from geometry_msgs.msg import Twist
+# import the ROS2 Python client libraries
+import rclpy
+from rclpy.node import Node
+
+
+class Service(Node):
+
+    def __init__(self):
+        # Here you have the class constructor
+
+        # call the class constructor to initialize the node as service_moving
+        super().__init__('service_moving_right')
+        
+        
+        #######################创建Server#################################
+        
+        # create the Service Server object
+        # defines the type, name, and callback function
+        self.srv = self.create_service(SetBool, 'moving_right', 	self.SetBool_callback)
+       
+    	#################################################################
+    
+    	########################创建Publisher#############################
+    	
+        # create the Publisher object
+        # in this case, the Publisher will publish on /cmd_vel topic with a queue size of 10 messages.
+        # use the Twist module
+        self.publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
+        # create a Twist message
+        self.cmd = Twist()    
+        #################################################################
+
+    def SetBool_callback(self, request, response):
+        # The callback function receives the self-class parameter, 
+        # received along with two parameters called request and response
+        # - receive the data by request
+        # - return a result as a response        
+            
+        # Publish the message to the topic
+        # As you see, the name of the request parameter is data, so do it
+        if request.data == True:
+            
+            # define the linear x-axis velocity of /cmd_vel topic parameter to 0.3
+            self.cmd.linear.x = 0.3
+            # define the angular z-axis velocity of /cmd_vel topic parameter to 0.3
+            self.cmd.angular.z =-0.3
+            
+            # 发布message
+            self.publisher_.publish(self.cmd)
+            # You need a response
+            response.success = True
+            # You need another response, but this time, SetBool lets you put a String
+            response.message = 'MOVING TO THE RIGHT RIGHT RIGHT!'
+
+        if request.data == False:
+
+            self.cmd.linear.x = 0.0
+            # define the angular z-axis velocity of /cmd_vel topic parameter to 0.3
+            self.cmd.angular.z =0.0
+            
+            self.publisher_.publish(self.cmd)
+            response.success = False
+
+            response.message = 'It is time to stop!'       
+                
+        # return the response parameters
+        return response
+
+
+def main(args=None):
+    # initialize the ROS communication
+    rclpy.init(args=args)
+    # declare the node constructor
+    moving_right_service = Service()
+    # pause the program execution, waits for a request to kill the node (ctrl+c)
+    rclpy.spin(moving_right_service)
+    # shutdown the ROS communication
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+```
 
 
 
+#### 3. 创建Launch文件
+
+```
+cd ~/ros2_ws/src/exercise42_pkg
+mkdir launch
+cd ~/ros2_ws/src/exercise42_pkg/launch
+touch exercise42_launch_file.launch.py
+chmod +x exercise42_launch_file.launch.py
+```
+
+**exercise42_launch_file.launch.py**
+
+```python
+from launch import LaunchDescription
+from launch_ros.actions import Node
+
+def generate_launch_description():
+    return LaunchDescription([
+        Node(
+            package='exercise42_pkg',
+            executable='exercise42',
+            output='screen'),
+    ])
+```
 
 
 
+#### 4. 修改setup.py
+
+```python
+from setuptools import setup
+import os
+from glob import glob
+
+package_name = 'exercise42_pkg'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=[package_name],
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name), glob('launch/*.launch.py'))
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='user',
+    maintainer_email='user@todo.todo',
+    description='TODO: Package description',
+    license='TODO: License declaration',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            'exercise42 = exercise42_pkg.exercise42:main'
+        ],
+    },
+)
+```
+
+#### 5. 编译**package**
+
+```
+colcon build --packages-select exercise42_pkg
+source ~/ros2_ws/install/setup.bash
+```
+
+#### 6. **Launch the Service Server node in your Terminal #1.**
+
+```
+ros2 launch exercise42_pkg exercise42_launch_file.launch.py
+```
+
+#### 7.使用ros2 service call in your Terminal #2
+
+调用服务 控制机器人
+
+```
+ros2 service call /moving_right std_srvs/srv/SetBool data:\ true
+ros2 service call /moving_right std_srvs/srv/SetBool data:\ false
+```
 
 
 
+### 4.6  Custom Service Interface
 
+**自定义Server Type**
 
+To create a new Service type (srv), complete the following steps:
 
+1. Create a directory named **`srv`** inside your package
+2. Inside this directory, create a file named **`Name_of_your_service_type.srv`** (more - information below)
+3. Modify **`CMakeLists.txt`** file (more information below)
+4. Modify **`package.xml`** file (more information below)
+5. Compile and source
+6. Use in code
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+For example, create an interface that receives as a request three possible movements: `"Turn Right"` (turn right) , `"Turn Left"` (turn left) and `"Stop"` (stop).
 
 
 
