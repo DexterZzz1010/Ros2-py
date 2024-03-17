@@ -1,0 +1,36 @@
+[2.396s] Invoking command in '/home/user/ros2_ws/src/client_pkg': PYTHONPATH=/home/user/ros2_ws/build/client_pkg/prefix_override:/home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/client_pkg build --build-base /home/user/ros2_ws/build/client_pkg/build install --record /home/user/ros2_ws/build/client_pkg/install.log --single-version-externally-managed
+[2.873s] running egg_info
+[2.874s] creating ../../build/client_pkg/client_pkg.egg-info
+[2.874s] writing ../../build/client_pkg/client_pkg.egg-info/PKG-INFO
+[2.874s] writing dependency_links to ../../build/client_pkg/client_pkg.egg-info/dependency_links.txt
+[2.875s] writing entry points to ../../build/client_pkg/client_pkg.egg-info/entry_points.txt
+[2.875s] writing requirements to ../../build/client_pkg/client_pkg.egg-info/requires.txt
+[2.875s] writing top-level names to ../../build/client_pkg/client_pkg.egg-info/top_level.txt
+[2.876s] writing manifest file '../../build/client_pkg/client_pkg.egg-info/SOURCES.txt'
+[2.878s] reading manifest file '../../build/client_pkg/client_pkg.egg-info/SOURCES.txt'
+[2.879s] writing manifest file '../../build/client_pkg/client_pkg.egg-info/SOURCES.txt'
+[2.879s] running build
+[2.879s] running build_py
+[2.879s] creating /home/user/ros2_ws/build/client_pkg/build
+[2.880s] creating /home/user/ros2_ws/build/client_pkg/build/lib
+[2.880s] creating /home/user/ros2_ws/build/client_pkg/build/lib/client_pkg
+[2.880s] copying client_pkg/service_client.py -> /home/user/ros2_ws/build/client_pkg/build/lib/client_pkg
+[2.880s] copying client_pkg/__init__.py -> /home/user/ros2_ws/build/client_pkg/build/lib/client_pkg
+[2.880s] running install
+[2.880s] running install_lib
+[2.881s] creating /home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages/client_pkg
+[2.882s] copying /home/user/ros2_ws/build/client_pkg/build/lib/client_pkg/service_client.py -> /home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages/client_pkg
+[2.882s] copying /home/user/ros2_ws/build/client_pkg/build/lib/client_pkg/__init__.py -> /home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages/client_pkg
+[2.882s] byte-compiling /home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages/client_pkg/service_client.py to service_client.cpython-310.pyc
+[2.883s] byte-compiling /home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages/client_pkg/__init__.py to __init__.cpython-310.pyc
+[2.883s] running install_data
+[2.884s] creating /home/user/ros2_ws/install/client_pkg/share/ament_index
+[2.885s] creating /home/user/ros2_ws/install/client_pkg/share/ament_index/resource_index
+[2.885s] creating /home/user/ros2_ws/install/client_pkg/share/ament_index/resource_index/packages
+[2.886s] copying resource/client_pkg -> /home/user/ros2_ws/install/client_pkg/share/ament_index/resource_index/packages
+[2.886s] copying package.xml -> /home/user/ros2_ws/install/client_pkg/share/client_pkg
+[2.886s] running install_egg_info
+[2.887s] Copying ../../build/client_pkg/client_pkg.egg-info to /home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages/client_pkg-0.0.0-py3.10.egg-info
+[2.888s] running install_scripts
+[2.919s] writing list of installed files to '/home/user/ros2_ws/build/client_pkg/install.log'
+[2.959s] Invoked command in '/home/user/ros2_ws/src/client_pkg' returned '0': PYTHONPATH=/home/user/ros2_ws/build/client_pkg/prefix_override:/home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/client_pkg build --build-base /home/user/ros2_ws/build/client_pkg/build install --record /home/user/ros2_ws/build/client_pkg/install.log --single-version-externally-managed

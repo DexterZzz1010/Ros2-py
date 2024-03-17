@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from custom_interfaces/srv/MyCustomServiceMessage.srv
+// generated code does not contain a copyright notice
+
+
+module custom_interfaces {
+  module srv {
+    struct MyCustomServiceMessage_Request {
+      @verbatim (language="comment", text=
+        "Signal to define the movement" "\n"
+        "\"Turn right\" to make the robot turn in the right direction." "\n"
+        "\"Turn left\" to make the robot turn in the left direction." "\n"
+        "\"Stop\" to make the robot stop the movement.")
+      string move;
+    };
+    struct MyCustomServiceMessage_Response {
+      @verbatim (language="comment", text=
+        "Did it achieve it?")
+      boolean success;
+    };
+  };
+};

@@ -1,0 +1,38 @@
+[1.552s] Invoking command in '/home/user/ros2_ws/src/my_action_server': PYTHONPATH=/home/user/ros2_ws/build/my_action_server/prefix_override:/home/user/ros2_ws/install/my_action_server/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/my_action_server build --build-base /home/user/ros2_ws/build/my_action_server/build install --record /home/user/ros2_ws/build/my_action_server/install.log --single-version-externally-managed
+[2.168s] running egg_info
+[2.168s] creating ../../build/my_action_server/my_action_server.egg-info
+[2.168s] writing ../../build/my_action_server/my_action_server.egg-info/PKG-INFO
+[2.168s] writing dependency_links to ../../build/my_action_server/my_action_server.egg-info/dependency_links.txt
+[2.169s] writing entry points to ../../build/my_action_server/my_action_server.egg-info/entry_points.txt
+[2.169s] writing requirements to ../../build/my_action_server/my_action_server.egg-info/requires.txt
+[2.169s] writing top-level names to ../../build/my_action_server/my_action_server.egg-info/top_level.txt
+[2.169s] writing manifest file '../../build/my_action_server/my_action_server.egg-info/SOURCES.txt'
+[2.171s] reading manifest file '../../build/my_action_server/my_action_server.egg-info/SOURCES.txt'
+[2.171s] writing manifest file '../../build/my_action_server/my_action_server.egg-info/SOURCES.txt'
+[2.172s] running build
+[2.172s] running build_py
+[2.172s] creating /home/user/ros2_ws/build/my_action_server/build
+[2.172s] creating /home/user/ros2_ws/build/my_action_server/build/lib
+[2.172s] creating /home/user/ros2_ws/build/my_action_server/build/lib/my_action_server
+[2.172s] copying my_action_server/__init__.py -> /home/user/ros2_ws/build/my_action_server/build/lib/my_action_server
+[2.172s] copying my_action_server/action_server.py -> /home/user/ros2_ws/build/my_action_server/build/lib/my_action_server
+[2.174s] running install
+[2.174s] running install_lib
+[2.176s] creating /home/user/ros2_ws/install/my_action_server/lib/python3.10/site-packages/my_action_server
+[2.176s] copying /home/user/ros2_ws/build/my_action_server/build/lib/my_action_server/__init__.py -> /home/user/ros2_ws/install/my_action_server/lib/python3.10/site-packages/my_action_server
+[2.176s] copying /home/user/ros2_ws/build/my_action_server/build/lib/my_action_server/action_server.py -> /home/user/ros2_ws/install/my_action_server/lib/python3.10/site-packages/my_action_server
+[2.177s] byte-compiling /home/user/ros2_ws/install/my_action_server/lib/python3.10/site-packages/my_action_server/__init__.py to __init__.cpython-310.pyc
+[2.177s] byte-compiling /home/user/ros2_ws/install/my_action_server/lib/python3.10/site-packages/my_action_server/action_server.py to action_server.cpython-310.pyc
+[2.178s] running install_data
+[2.179s] creating /home/user/ros2_ws/install/my_action_server/share/ament_index
+[2.179s] creating /home/user/ros2_ws/install/my_action_server/share/ament_index/resource_index
+[2.180s] creating /home/user/ros2_ws/install/my_action_server/share/ament_index/resource_index/packages
+[2.180s] copying resource/my_action_server -> /home/user/ros2_ws/install/my_action_server/share/ament_index/resource_index/packages
+[2.180s] copying package.xml -> /home/user/ros2_ws/install/my_action_server/share/my_action_server
+[2.181s] copying launch/example63_launch_file.launch.py -> /home/user/ros2_ws/install/my_action_server/share/my_action_server
+[2.181s] running install_egg_info
+[2.183s] Copying ../../build/my_action_server/my_action_server.egg-info to /home/user/ros2_ws/install/my_action_server/lib/python3.10/site-packages/my_action_server-0.0.0-py3.10.egg-info
+[2.184s] running install_scripts
+[2.223s] Installing example63 script to /home/user/ros2_ws/install/my_action_server/lib/my_action_server
+[2.224s] writing list of installed files to '/home/user/ros2_ws/build/my_action_server/install.log'
+[2.262s] Invoked command in '/home/user/ros2_ws/src/my_action_server' returned '0': PYTHONPATH=/home/user/ros2_ws/build/my_action_server/prefix_override:/home/user/ros2_ws/install/my_action_server/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/my_action_server build --build-base /home/user/ros2_ws/build/my_action_server/build install --record /home/user/ros2_ws/build/my_action_server/install.log --single-version-externally-managed

@@ -1,0 +1,49 @@
+-- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclpy: 3.3.10 (/home/simulations/ros2_sims_ws/install/rclpy/share/rclpy/cmake)
+-- Found ament_lint_auto: 0.12.4 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/user/ros2_ws/build/basics_ros2_multithreading
+-- Install configuration: ""
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/scripts
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/scripts/haarcascade_frontalface.xml
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/scripts/callback_function.py
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/scripts/face_searcher_multithreading_callbackgroups.py
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/scripts/function.py
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/scripts/deepbot_movehead.py
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/scripts/yello_tshirt_detector.py
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/scripts/face_searcher_multithreading.py
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/scripts/face_searcher.py
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/scripts/callback_spinonce_function.py
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/launch
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/launch/callback_function.launch.py
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/launch/face_searcher.launch.py
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/launch/face_searcher_multithreading.launch.py
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/launch/face_searcher_multithreading_callbackgroups.launch.py
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/launch/yello_tshirt_detector.launch.py
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/lib/basics_ros2_multithreading/function.py
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/lib/basics_ros2_multithreading/callback_function.py
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/lib/basics_ros2_multithreading/callback_spinonce_function.py
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/lib/basics_ros2_multithreading/face_searcher.py
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/lib/basics_ros2_multithreading/face_searcher_multithreading.py
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/lib/basics_ros2_multithreading/face_searcher_multithreading_callbackgroups.py
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/lib/basics_ros2_multithreading/yello_tshirt_detector.py
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/ament_index/resource_index/package_run_dependencies/basics_ros2_multithreading
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/ament_index/resource_index/parent_prefix_path/basics_ros2_multithreading
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/environment/ament_prefix_path.sh
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/environment/path.sh
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/environment/path.dsv
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/local_setup.bash
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/local_setup.sh
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/local_setup.zsh
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/local_setup.dsv
+-- Installing: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/package.dsv
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/ament_index/resource_index/packages/basics_ros2_multithreading
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/cmake/basics_ros2_multithreadingConfig.cmake
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/cmake/basics_ros2_multithreadingConfig-version.cmake
+-- Up-to-date: /home/user/ros2_ws/install/basics_ros2_multithreading/share/basics_ros2_multithreading/package.xml

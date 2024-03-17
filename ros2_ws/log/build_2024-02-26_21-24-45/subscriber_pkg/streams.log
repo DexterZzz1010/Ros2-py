@@ -1,0 +1,38 @@
+[1.363s] Invoking command in '/home/user/ros2_ws/src/subscriber_pkg': PYTHONPATH=/home/user/ros2_ws/build/subscriber_pkg/prefix_override:/home/user/ros2_ws/install/subscriber_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/subscriber_pkg build --build-base /home/user/ros2_ws/build/subscriber_pkg/build install --record /home/user/ros2_ws/build/subscriber_pkg/install.log --single-version-externally-managed
+[1.879s] running egg_info
+[1.880s] creating ../../build/subscriber_pkg/subscriber_pkg.egg-info
+[1.880s] writing ../../build/subscriber_pkg/subscriber_pkg.egg-info/PKG-INFO
+[1.880s] writing dependency_links to ../../build/subscriber_pkg/subscriber_pkg.egg-info/dependency_links.txt
+[1.880s] writing entry points to ../../build/subscriber_pkg/subscriber_pkg.egg-info/entry_points.txt
+[1.881s] writing requirements to ../../build/subscriber_pkg/subscriber_pkg.egg-info/requires.txt
+[1.881s] writing top-level names to ../../build/subscriber_pkg/subscriber_pkg.egg-info/top_level.txt
+[1.881s] writing manifest file '../../build/subscriber_pkg/subscriber_pkg.egg-info/SOURCES.txt'
+[1.884s] reading manifest file '../../build/subscriber_pkg/subscriber_pkg.egg-info/SOURCES.txt'
+[1.885s] writing manifest file '../../build/subscriber_pkg/subscriber_pkg.egg-info/SOURCES.txt'
+[1.885s] running build
+[1.885s] running build_py
+[1.886s] creating /home/user/ros2_ws/build/subscriber_pkg/build
+[1.886s] creating /home/user/ros2_ws/build/subscriber_pkg/build/lib
+[1.886s] creating /home/user/ros2_ws/build/subscriber_pkg/build/lib/subscriber_pkg
+[1.886s] copying subscriber_pkg/simple_subscriber.py -> /home/user/ros2_ws/build/subscriber_pkg/build/lib/subscriber_pkg
+[1.886s] copying subscriber_pkg/__init__.py -> /home/user/ros2_ws/build/subscriber_pkg/build/lib/subscriber_pkg
+[1.886s] running install
+[1.887s] running install_lib
+[1.888s] creating /home/user/ros2_ws/install/subscriber_pkg/lib/python3.10/site-packages/subscriber_pkg
+[1.888s] copying /home/user/ros2_ws/build/subscriber_pkg/build/lib/subscriber_pkg/simple_subscriber.py -> /home/user/ros2_ws/install/subscriber_pkg/lib/python3.10/site-packages/subscriber_pkg
+[1.889s] copying /home/user/ros2_ws/build/subscriber_pkg/build/lib/subscriber_pkg/__init__.py -> /home/user/ros2_ws/install/subscriber_pkg/lib/python3.10/site-packages/subscriber_pkg
+[1.889s] byte-compiling /home/user/ros2_ws/install/subscriber_pkg/lib/python3.10/site-packages/subscriber_pkg/simple_subscriber.py to simple_subscriber.cpython-310.pyc
+[1.890s] byte-compiling /home/user/ros2_ws/install/subscriber_pkg/lib/python3.10/site-packages/subscriber_pkg/__init__.py to __init__.cpython-310.pyc
+[1.890s] running install_data
+[1.892s] creating /home/user/ros2_ws/install/subscriber_pkg/share/ament_index
+[1.892s] creating /home/user/ros2_ws/install/subscriber_pkg/share/ament_index/resource_index
+[1.892s] creating /home/user/ros2_ws/install/subscriber_pkg/share/ament_index/resource_index/packages
+[1.892s] copying resource/subscriber_pkg -> /home/user/ros2_ws/install/subscriber_pkg/share/ament_index/resource_index/packages
+[1.892s] copying package.xml -> /home/user/ros2_ws/install/subscriber_pkg/share/subscriber_pkg
+[1.893s] copying launch/subscriber_pkg_launch_file.launch.py -> /home/user/ros2_ws/install/subscriber_pkg/share/subscriber_pkg
+[1.893s] running install_egg_info
+[1.895s] Copying ../../build/subscriber_pkg/subscriber_pkg.egg-info to /home/user/ros2_ws/install/subscriber_pkg/lib/python3.10/site-packages/subscriber_pkg-0.0.0-py3.10.egg-info
+[1.897s] running install_scripts
+[1.934s] Installing simple_subscriber script to /home/user/ros2_ws/install/subscriber_pkg/lib/subscriber_pkg
+[1.934s] writing list of installed files to '/home/user/ros2_ws/build/subscriber_pkg/install.log'
+[1.973s] Invoked command in '/home/user/ros2_ws/src/subscriber_pkg' returned '0': PYTHONPATH=/home/user/ros2_ws/build/subscriber_pkg/prefix_override:/home/user/ros2_ws/install/subscriber_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/subscriber_pkg build --build-base /home/user/ros2_ws/build/subscriber_pkg/build install --record /home/user/ros2_ws/build/subscriber_pkg/install.log --single-version-externally-managed

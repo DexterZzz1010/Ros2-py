@@ -1,0 +1,4 @@
+[console_scripts]
+movement_client = movement_pkg.movement_client:main
+movement_server = movement_pkg.movement_server:main
+

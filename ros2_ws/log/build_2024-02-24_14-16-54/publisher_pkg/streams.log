@@ -1,0 +1,56 @@
+[2.377s] Invoking command in '/home/user/ros2_ws/src/publisher_pkg': PYTHONPATH=/home/user/ros2_ws/build/publisher_pkg/prefix_override:/home/user/ros2_ws/install/publisher_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/publisher_pkg build --build-base /home/user/ros2_ws/build/publisher_pkg/build install --record /home/user/ros2_ws/build/publisher_pkg/install.log --single-version-externally-managed
+[2.875s] running egg_info
+[2.875s] creating ../../build/publisher_pkg/publisher_pkg.egg-info
+[2.876s] writing ../../build/publisher_pkg/publisher_pkg.egg-info/PKG-INFO
+[2.876s] writing dependency_links to ../../build/publisher_pkg/publisher_pkg.egg-info/dependency_links.txt
+[2.876s] writing entry points to ../../build/publisher_pkg/publisher_pkg.egg-info/entry_points.txt
+[2.876s] writing requirements to ../../build/publisher_pkg/publisher_pkg.egg-info/requires.txt
+[2.876s] writing top-level names to ../../build/publisher_pkg/publisher_pkg.egg-info/top_level.txt
+[2.876s] writing manifest file '../../build/publisher_pkg/publisher_pkg.egg-info/SOURCES.txt'
+[2.879s] reading manifest file '../../build/publisher_pkg/publisher_pkg.egg-info/SOURCES.txt'
+[2.879s] writing manifest file '../../build/publisher_pkg/publisher_pkg.egg-info/SOURCES.txt'
+[2.880s] running build
+[2.880s] running build_py
+[2.880s] creating /home/user/ros2_ws/build/publisher_pkg/build
+[2.880s] creating /home/user/ros2_ws/build/publisher_pkg/build/lib
+[2.880s] creating /home/user/ros2_ws/build/publisher_pkg/build/lib/publisher_pkg
+[2.880s] copying publisher_pkg/__init__.py -> /home/user/ros2_ws/build/publisher_pkg/build/lib/publisher_pkg
+[2.880s] copying publisher_pkg/simple_publisher.py -> /home/user/ros2_ws/build/publisher_pkg/build/lib/publisher_pkg
+[2.881s] running install
+[2.881s] running install_lib
+[2.882s] creating /home/user/ros2_ws/install/publisher_pkg/lib/python3.10/site-packages/publisher_pkg
+[2.882s] copying /home/user/ros2_ws/build/publisher_pkg/build/lib/publisher_pkg/__init__.py -> /home/user/ros2_ws/install/publisher_pkg/lib/python3.10/site-packages/publisher_pkg
+[2.883s] copying /home/user/ros2_ws/build/publisher_pkg/build/lib/publisher_pkg/simple_publisher.py -> /home/user/ros2_ws/install/publisher_pkg/lib/python3.10/site-packages/publisher_pkg
+[2.884s] byte-compiling /home/user/ros2_ws/install/publisher_pkg/lib/python3.10/site-packages/publisher_pkg/__init__.py to __init__.cpython-310.pyc
+[2.884s] byte-compiling /home/user/ros2_ws/install/publisher_pkg/lib/python3.10/site-packages/publisher_pkg/simple_publisher.py to simple_publisher.cpython-310.pyc
+[2.887s] running install_data
+[2.888s] creating /home/user/ros2_ws/install/publisher_pkg/share/ament_index
+[2.888s] creating /home/user/ros2_ws/install/publisher_pkg/share/ament_index/resource_index
+[2.888s] creating /home/user/ros2_ws/install/publisher_pkg/share/ament_index/resource_index/packages
+[2.888s] copying resource/publisher_pkg -> /home/user/ros2_ws/install/publisher_pkg/share/ament_index/resource_index/packages
+[2.888s] copying package.xml -> /home/user/ros2_ws/install/publisher_pkg/share/publisher_pkg
+[2.888s] running install_egg_info
+[2.888s] Copying ../../build/publisher_pkg/publisher_pkg.egg-info to /home/user/ros2_ws/install/publisher_pkg/lib/python3.10/site-packages/publisher_pkg-0.0.0-py3.10.egg-info
+[2.891s] running install_scripts
+[2.928s] writing list of installed files to '/home/user/ros2_ws/build/publisher_pkg/install.log'
+[2.935s] running egg_info
+[2.937s] writing ../../build/publisher_pkg/publisher_pkg.egg-info/PKG-INFO
+[2.937s] writing dependency_links to ../../build/publisher_pkg/publisher_pkg.egg-info/dependency_links.txt
+[2.937s] writing entry points to ../../build/publisher_pkg/publisher_pkg.egg-info/entry_points.txt
+[2.937s] writing requirements to ../../build/publisher_pkg/publisher_pkg.egg-info/requires.txt
+[2.937s] writing top-level names to ../../build/publisher_pkg/publisher_pkg.egg-info/top_level.txt
+[2.943s] reading manifest file '../../build/publisher_pkg/publisher_pkg.egg-info/SOURCES.txt'
+[2.943s] writing manifest file '../../build/publisher_pkg/publisher_pkg.egg-info/SOURCES.txt'
+[2.943s] running build
+[2.944s] running build_py
+[2.944s] running install
+[2.944s] running install_lib
+[2.944s] running install_data
+[2.944s] copying launch/publisher_pkg_launch_file.launch.py -> /home/user/ros2_ws/install/publisher_pkg/share/publisher_pkg
+[2.944s] running install_egg_info
+[2.945s] removing '/home/user/ros2_ws/install/publisher_pkg/lib/python3.10/site-packages/publisher_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[2.945s] Copying ../../build/publisher_pkg/publisher_pkg.egg-info to /home/user/ros2_ws/install/publisher_pkg/lib/python3.10/site-packages/publisher_pkg-0.0.0-py3.10.egg-info
+[2.945s] running install_scripts
+[2.946s] Installing simple_publisher script to /home/user/ros2_ws/install/publisher_pkg/lib/publisher_pkg
+[2.947s] writing list of installed files to '/home/user/ros2_ws/build/publisher_pkg/install.log'
+[2.988s] Invoked command in '/home/user/ros2_ws/src/publisher_pkg' returned '0': PYTHONPATH=/home/user/ros2_ws/build/publisher_pkg/prefix_override:/home/user/ros2_ws/install/publisher_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/publisher_pkg build --build-base /home/user/ros2_ws/build/publisher_pkg/build install --record /home/user/ros2_ws/build/publisher_pkg/install.log --single-version-externally-managed

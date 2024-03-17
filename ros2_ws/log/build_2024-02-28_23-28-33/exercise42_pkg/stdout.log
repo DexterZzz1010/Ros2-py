@@ -1,0 +1,36 @@
+running egg_info
+creating ../../build/exercise42_pkg/exercise42_pkg.egg-info
+writing ../../build/exercise42_pkg/exercise42_pkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/exercise42_pkg/exercise42_pkg.egg-info/dependency_links.txt
+writing entry points to ../../build/exercise42_pkg/exercise42_pkg.egg-info/entry_points.txt
+writing requirements to ../../build/exercise42_pkg/exercise42_pkg.egg-info/requires.txt
+writing top-level names to ../../build/exercise42_pkg/exercise42_pkg.egg-info/top_level.txt
+writing manifest file '../../build/exercise42_pkg/exercise42_pkg.egg-info/SOURCES.txt'
+reading manifest file '../../build/exercise42_pkg/exercise42_pkg.egg-info/SOURCES.txt'
+writing manifest file '../../build/exercise42_pkg/exercise42_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/user/ros2_ws/build/exercise42_pkg/build
+creating /home/user/ros2_ws/build/exercise42_pkg/build/lib
+creating /home/user/ros2_ws/build/exercise42_pkg/build/lib/exercise42_pkg
+copying exercise42_pkg/__init__.py -> /home/user/ros2_ws/build/exercise42_pkg/build/lib/exercise42_pkg
+copying exercise42_pkg/exercise42.py -> /home/user/ros2_ws/build/exercise42_pkg/build/lib/exercise42_pkg
+running install
+running install_lib
+creating /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg
+copying /home/user/ros2_ws/build/exercise42_pkg/build/lib/exercise42_pkg/__init__.py -> /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg
+copying /home/user/ros2_ws/build/exercise42_pkg/build/lib/exercise42_pkg/exercise42.py -> /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg
+byte-compiling /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg/exercise42.py to exercise42.cpython-310.pyc
+running install_data
+creating /home/user/ros2_ws/install/exercise42_pkg/share/ament_index
+creating /home/user/ros2_ws/install/exercise42_pkg/share/ament_index/resource_index
+creating /home/user/ros2_ws/install/exercise42_pkg/share/ament_index/resource_index/packages
+copying resource/exercise42_pkg -> /home/user/ros2_ws/install/exercise42_pkg/share/ament_index/resource_index/packages
+copying package.xml -> /home/user/ros2_ws/install/exercise42_pkg/share/exercise42_pkg
+copying launch/exercise42_launch_file.launch.py -> /home/user/ros2_ws/install/exercise42_pkg/share/exercise42_pkg
+running install_egg_info
+Copying ../../build/exercise42_pkg/exercise42_pkg.egg-info to /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing exercise42 script to /home/user/ros2_ws/install/exercise42_pkg/lib/exercise42_pkg
+writing list of installed files to '/home/user/ros2_ws/build/exercise42_pkg/install.log'

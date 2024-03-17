@@ -1,0 +1,3 @@
+[console_scripts]
+logger_example_node = logs_test.logger_example:main
+

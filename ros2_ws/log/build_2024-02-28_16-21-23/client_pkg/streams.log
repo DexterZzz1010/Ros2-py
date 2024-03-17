@@ -1,0 +1,22 @@
+[1.182s] Invoking command in '/home/user/ros2_ws/src/client_pkg': PYTHONPATH=/home/user/ros2_ws/build/client_pkg/prefix_override:/home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/client_pkg build --build-base /home/user/ros2_ws/build/client_pkg/build install --record /home/user/ros2_ws/build/client_pkg/install.log --single-version-externally-managed
+[1.638s] running egg_info
+[1.639s] writing ../../build/client_pkg/client_pkg.egg-info/PKG-INFO
+[1.639s] writing dependency_links to ../../build/client_pkg/client_pkg.egg-info/dependency_links.txt
+[1.639s] writing entry points to ../../build/client_pkg/client_pkg.egg-info/entry_points.txt
+[1.639s] writing requirements to ../../build/client_pkg/client_pkg.egg-info/requires.txt
+[1.639s] writing top-level names to ../../build/client_pkg/client_pkg.egg-info/top_level.txt
+[1.642s] reading manifest file '../../build/client_pkg/client_pkg.egg-info/SOURCES.txt'
+[1.644s] writing manifest file '../../build/client_pkg/client_pkg.egg-info/SOURCES.txt'
+[1.644s] running build
+[1.644s] running build_py
+[1.645s] running install
+[1.645s] running install_lib
+[1.647s] running install_data
+[1.648s] copying launch/service_client_launch_file.launch.py -> /home/user/ros2_ws/install/client_pkg/share/client_pkg
+[1.648s] running install_egg_info
+[1.651s] removing '/home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages/client_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[1.652s] Copying ../../build/client_pkg/client_pkg.egg-info to /home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages/client_pkg-0.0.0-py3.10.egg-info
+[1.653s] running install_scripts
+[1.684s] Installing service_client script to /home/user/ros2_ws/install/client_pkg/lib/client_pkg
+[1.684s] writing list of installed files to '/home/user/ros2_ws/build/client_pkg/install.log'
+[1.723s] Invoked command in '/home/user/ros2_ws/src/client_pkg' returned '0': PYTHONPATH=/home/user/ros2_ws/build/client_pkg/prefix_override:/home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/client_pkg build --build-base /home/user/ros2_ws/build/client_pkg/build install --record /home/user/ros2_ws/build/client_pkg/install.log --single-version-externally-managed

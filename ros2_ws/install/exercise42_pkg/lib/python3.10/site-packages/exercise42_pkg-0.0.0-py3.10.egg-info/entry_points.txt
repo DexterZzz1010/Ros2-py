@@ -1,0 +1,3 @@
+[console_scripts]
+exercise42 = exercise42_pkg.exercise42:main
+

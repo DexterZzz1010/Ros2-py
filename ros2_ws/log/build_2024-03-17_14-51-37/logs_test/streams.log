@@ -1,0 +1,21 @@
+[1.278s] Invoking command in '/home/user/ros2_ws/src/logs_test': PYTHONPATH=/home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/logs_test build --build-base /home/user/ros2_ws/build/logs_test/build install --prefix /home/user/ros2_ws/install/logs_test --record /home/user/ros2_ws/build/logs_test/install.log --single-version-externally-managed
+[1.764s] running egg_info
+[1.765s] writing ../../build/logs_test/logs_test.egg-info/PKG-INFO
+[1.766s] writing dependency_links to ../../build/logs_test/logs_test.egg-info/dependency_links.txt
+[1.766s] writing entry points to ../../build/logs_test/logs_test.egg-info/entry_points.txt
+[1.766s] writing requirements to ../../build/logs_test/logs_test.egg-info/requires.txt
+[1.766s] writing top-level names to ../../build/logs_test/logs_test.egg-info/top_level.txt
+[1.772s] reading manifest file '../../build/logs_test/logs_test.egg-info/SOURCES.txt'
+[1.774s] writing manifest file '../../build/logs_test/logs_test.egg-info/SOURCES.txt'
+[1.774s] running build
+[1.774s] running build_py
+[1.774s] running install
+[1.775s] running install_lib
+[1.777s] running install_data
+[1.778s] running install_egg_info
+[1.780s] removing '/home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages/logs_test-0.0.0-py3.10.egg-info' (and everything under it)
+[1.781s] Copying ../../build/logs_test/logs_test.egg-info to /home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages/logs_test-0.0.0-py3.10.egg-info
+[1.783s] running install_scripts
+[1.830s] Installing logger_example_node script to /home/user/ros2_ws/install/logs_test/lib/logs_test
+[1.832s] writing list of installed files to '/home/user/ros2_ws/build/logs_test/install.log'
+[1.878s] Invoked command in '/home/user/ros2_ws/src/logs_test' returned '0': PYTHONPATH=/home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/logs_test build --build-base /home/user/ros2_ws/build/logs_test/build install --prefix /home/user/ros2_ws/install/logs_test --record /home/user/ros2_ws/build/logs_test/install.log --single-version-externally-managed

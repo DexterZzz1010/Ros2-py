@@ -1,0 +1,36 @@
+running egg_info
+creating ../../build/logs_test/logs_test.egg-info
+writing ../../build/logs_test/logs_test.egg-info/PKG-INFO
+writing dependency_links to ../../build/logs_test/logs_test.egg-info/dependency_links.txt
+writing entry points to ../../build/logs_test/logs_test.egg-info/entry_points.txt
+writing requirements to ../../build/logs_test/logs_test.egg-info/requires.txt
+writing top-level names to ../../build/logs_test/logs_test.egg-info/top_level.txt
+writing manifest file '../../build/logs_test/logs_test.egg-info/SOURCES.txt'
+reading manifest file '../../build/logs_test/logs_test.egg-info/SOURCES.txt'
+writing manifest file '../../build/logs_test/logs_test.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/user/ros2_ws/build/logs_test/build
+creating /home/user/ros2_ws/build/logs_test/build/lib
+creating /home/user/ros2_ws/build/logs_test/build/lib/logs_test
+copying logs_test/logger_example.py -> /home/user/ros2_ws/build/logs_test/build/lib/logs_test
+copying logs_test/__init__.py -> /home/user/ros2_ws/build/logs_test/build/lib/logs_test
+running install
+running install_lib
+creating /home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages/logs_test
+copying /home/user/ros2_ws/build/logs_test/build/lib/logs_test/logger_example.py -> /home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages/logs_test
+copying /home/user/ros2_ws/build/logs_test/build/lib/logs_test/__init__.py -> /home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages/logs_test
+byte-compiling /home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages/logs_test/logger_example.py to logger_example.cpython-310.pyc
+byte-compiling /home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages/logs_test/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/user/ros2_ws/install/logs_test/share/ament_index
+creating /home/user/ros2_ws/install/logs_test/share/ament_index/resource_index
+creating /home/user/ros2_ws/install/logs_test/share/ament_index/resource_index/packages
+copying resource/logs_test -> /home/user/ros2_ws/install/logs_test/share/ament_index/resource_index/packages
+copying package.xml -> /home/user/ros2_ws/install/logs_test/share/logs_test
+copying launch/logger_example.launch.py -> /home/user/ros2_ws/install/logs_test/share/logs_test
+running install_egg_info
+Copying ../../build/logs_test/logs_test.egg-info to /home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages/logs_test-0.0.0-py3.10.egg-info
+running install_scripts
+Installing logs_test script to /home/user/ros2_ws/install/logs_test/lib/logs_test
+writing list of installed files to '/home/user/ros2_ws/build/logs_test/install.log'

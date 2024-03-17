@@ -1,0 +1,21 @@
+running egg_info
+writing ../../build/movement_pkg/movement_pkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/movement_pkg/movement_pkg.egg-info/dependency_links.txt
+writing entry points to ../../build/movement_pkg/movement_pkg.egg-info/entry_points.txt
+writing requirements to ../../build/movement_pkg/movement_pkg.egg-info/requires.txt
+writing top-level names to ../../build/movement_pkg/movement_pkg.egg-info/top_level.txt
+reading manifest file '../../build/movement_pkg/movement_pkg.egg-info/SOURCES.txt'
+writing manifest file '../../build/movement_pkg/movement_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying launch/movement_server_launch_file.launch.py -> /home/user/ros2_ws/install/movement_pkg/share/movement_pkg
+running install_egg_info
+removing '/home/user/ros2_ws/install/movement_pkg/lib/python3.10/site-packages/movement_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/movement_pkg/movement_pkg.egg-info to /home/user/ros2_ws/install/movement_pkg/lib/python3.10/site-packages/movement_pkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing movement_client script to /home/user/ros2_ws/install/movement_pkg/lib/movement_pkg
+Installing movement_server script to /home/user/ros2_ws/install/movement_pkg/lib/movement_pkg
+writing list of installed files to '/home/user/ros2_ws/build/movement_pkg/install.log'

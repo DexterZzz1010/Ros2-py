@@ -1,0 +1,38 @@
+[1.234s] Invoking command in '/home/user/ros2_ws/src/exercise31_pkg': PYTHONPATH=/home/user/ros2_ws/build/exercise31_pkg/prefix_override:/home/user/ros2_ws/install/exercise31_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/exercise31_pkg build --build-base /home/user/ros2_ws/build/exercise31_pkg/build install --record /home/user/ros2_ws/build/exercise31_pkg/install.log --single-version-externally-managed
+[1.745s] running egg_info
+[1.746s] creating ../../build/exercise31_pkg/exercise31_pkg.egg-info
+[1.747s] writing ../../build/exercise31_pkg/exercise31_pkg.egg-info/PKG-INFO
+[1.747s] writing dependency_links to ../../build/exercise31_pkg/exercise31_pkg.egg-info/dependency_links.txt
+[1.747s] writing entry points to ../../build/exercise31_pkg/exercise31_pkg.egg-info/entry_points.txt
+[1.747s] writing requirements to ../../build/exercise31_pkg/exercise31_pkg.egg-info/requires.txt
+[1.747s] writing top-level names to ../../build/exercise31_pkg/exercise31_pkg.egg-info/top_level.txt
+[1.748s] writing manifest file '../../build/exercise31_pkg/exercise31_pkg.egg-info/SOURCES.txt'
+[1.751s] reading manifest file '../../build/exercise31_pkg/exercise31_pkg.egg-info/SOURCES.txt'
+[1.752s] writing manifest file '../../build/exercise31_pkg/exercise31_pkg.egg-info/SOURCES.txt'
+[1.752s] running build
+[1.752s] running build_py
+[1.752s] creating /home/user/ros2_ws/build/exercise31_pkg/build
+[1.753s] creating /home/user/ros2_ws/build/exercise31_pkg/build/lib
+[1.753s] creating /home/user/ros2_ws/build/exercise31_pkg/build/lib/exercise31_pkg
+[1.753s] copying exercise31_pkg/__init__.py -> /home/user/ros2_ws/build/exercise31_pkg/build/lib/exercise31_pkg
+[1.753s] copying exercise31_pkg/exercise31.py -> /home/user/ros2_ws/build/exercise31_pkg/build/lib/exercise31_pkg
+[1.753s] running install
+[1.755s] running install_lib
+[1.756s] creating /home/user/ros2_ws/install/exercise31_pkg/lib/python3.10/site-packages/exercise31_pkg
+[1.757s] copying /home/user/ros2_ws/build/exercise31_pkg/build/lib/exercise31_pkg/__init__.py -> /home/user/ros2_ws/install/exercise31_pkg/lib/python3.10/site-packages/exercise31_pkg
+[1.757s] copying /home/user/ros2_ws/build/exercise31_pkg/build/lib/exercise31_pkg/exercise31.py -> /home/user/ros2_ws/install/exercise31_pkg/lib/python3.10/site-packages/exercise31_pkg
+[1.758s] byte-compiling /home/user/ros2_ws/install/exercise31_pkg/lib/python3.10/site-packages/exercise31_pkg/__init__.py to __init__.cpython-310.pyc
+[1.758s] byte-compiling /home/user/ros2_ws/install/exercise31_pkg/lib/python3.10/site-packages/exercise31_pkg/exercise31.py to exercise31.cpython-310.pyc
+[1.759s] running install_data
+[1.760s] creating /home/user/ros2_ws/install/exercise31_pkg/share/ament_index
+[1.761s] creating /home/user/ros2_ws/install/exercise31_pkg/share/ament_index/resource_index
+[1.761s] creating /home/user/ros2_ws/install/exercise31_pkg/share/ament_index/resource_index/packages
+[1.762s] copying resource/exercise31_pkg -> /home/user/ros2_ws/install/exercise31_pkg/share/ament_index/resource_index/packages
+[1.762s] copying package.xml -> /home/user/ros2_ws/install/exercise31_pkg/share/exercise31_pkg
+[1.762s] copying launch/exercise31_pkg_launch_file.launch.py -> /home/user/ros2_ws/install/exercise31_pkg/share/exercise31_pkg
+[1.762s] running install_egg_info
+[1.763s] Copying ../../build/exercise31_pkg/exercise31_pkg.egg-info to /home/user/ros2_ws/install/exercise31_pkg/lib/python3.10/site-packages/exercise31_pkg-0.0.0-py3.10.egg-info
+[1.765s] running install_scripts
+[1.799s] Installing exercise31 script to /home/user/ros2_ws/install/exercise31_pkg/lib/exercise31_pkg
+[1.799s] writing list of installed files to '/home/user/ros2_ws/build/exercise31_pkg/install.log'
+[1.843s] Invoked command in '/home/user/ros2_ws/src/exercise31_pkg' returned '0': PYTHONPATH=/home/user/ros2_ws/build/exercise31_pkg/prefix_override:/home/user/ros2_ws/install/exercise31_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/exercise31_pkg build --build-base /home/user/ros2_ws/build/exercise31_pkg/build install --record /home/user/ros2_ws/build/exercise31_pkg/install.log --single-version-externally-managed

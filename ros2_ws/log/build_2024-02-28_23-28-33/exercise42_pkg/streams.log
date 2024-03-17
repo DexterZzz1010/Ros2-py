@@ -1,0 +1,38 @@
+[2.490s] Invoking command in '/home/user/ros2_ws/src/exercise42_pkg': PYTHONPATH=/home/user/ros2_ws/build/exercise42_pkg/prefix_override:/home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/exercise42_pkg build --build-base /home/user/ros2_ws/build/exercise42_pkg/build install --record /home/user/ros2_ws/build/exercise42_pkg/install.log --single-version-externally-managed
+[3.014s] running egg_info
+[3.015s] creating ../../build/exercise42_pkg/exercise42_pkg.egg-info
+[3.015s] writing ../../build/exercise42_pkg/exercise42_pkg.egg-info/PKG-INFO
+[3.016s] writing dependency_links to ../../build/exercise42_pkg/exercise42_pkg.egg-info/dependency_links.txt
+[3.016s] writing entry points to ../../build/exercise42_pkg/exercise42_pkg.egg-info/entry_points.txt
+[3.016s] writing requirements to ../../build/exercise42_pkg/exercise42_pkg.egg-info/requires.txt
+[3.016s] writing top-level names to ../../build/exercise42_pkg/exercise42_pkg.egg-info/top_level.txt
+[3.016s] writing manifest file '../../build/exercise42_pkg/exercise42_pkg.egg-info/SOURCES.txt'
+[3.019s] reading manifest file '../../build/exercise42_pkg/exercise42_pkg.egg-info/SOURCES.txt'
+[3.020s] writing manifest file '../../build/exercise42_pkg/exercise42_pkg.egg-info/SOURCES.txt'
+[3.021s] running build
+[3.021s] running build_py
+[3.021s] creating /home/user/ros2_ws/build/exercise42_pkg/build
+[3.021s] creating /home/user/ros2_ws/build/exercise42_pkg/build/lib
+[3.021s] creating /home/user/ros2_ws/build/exercise42_pkg/build/lib/exercise42_pkg
+[3.022s] copying exercise42_pkg/__init__.py -> /home/user/ros2_ws/build/exercise42_pkg/build/lib/exercise42_pkg
+[3.022s] copying exercise42_pkg/exercise42.py -> /home/user/ros2_ws/build/exercise42_pkg/build/lib/exercise42_pkg
+[3.022s] running install
+[3.023s] running install_lib
+[3.024s] creating /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg
+[3.024s] copying /home/user/ros2_ws/build/exercise42_pkg/build/lib/exercise42_pkg/__init__.py -> /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg
+[3.025s] copying /home/user/ros2_ws/build/exercise42_pkg/build/lib/exercise42_pkg/exercise42.py -> /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg
+[3.026s] byte-compiling /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg/__init__.py to __init__.cpython-310.pyc
+[3.027s] byte-compiling /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg/exercise42.py to exercise42.cpython-310.pyc
+[3.027s] running install_data
+[3.028s] creating /home/user/ros2_ws/install/exercise42_pkg/share/ament_index
+[3.029s] creating /home/user/ros2_ws/install/exercise42_pkg/share/ament_index/resource_index
+[3.029s] creating /home/user/ros2_ws/install/exercise42_pkg/share/ament_index/resource_index/packages
+[3.029s] copying resource/exercise42_pkg -> /home/user/ros2_ws/install/exercise42_pkg/share/ament_index/resource_index/packages
+[3.029s] copying package.xml -> /home/user/ros2_ws/install/exercise42_pkg/share/exercise42_pkg
+[3.030s] copying launch/exercise42_launch_file.launch.py -> /home/user/ros2_ws/install/exercise42_pkg/share/exercise42_pkg
+[3.030s] running install_egg_info
+[3.033s] Copying ../../build/exercise42_pkg/exercise42_pkg.egg-info to /home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages/exercise42_pkg-0.0.0-py3.10.egg-info
+[3.035s] running install_scripts
+[3.071s] Installing exercise42 script to /home/user/ros2_ws/install/exercise42_pkg/lib/exercise42_pkg
+[3.072s] writing list of installed files to '/home/user/ros2_ws/build/exercise42_pkg/install.log'
+[3.112s] Invoked command in '/home/user/ros2_ws/src/exercise42_pkg' returned '0': PYTHONPATH=/home/user/ros2_ws/build/exercise42_pkg/prefix_override:/home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 setup.py egg_info --egg-base ../../build/exercise42_pkg build --build-base /home/user/ros2_ws/build/exercise42_pkg/build install --record /home/user/ros2_ws/build/exercise42_pkg/install.log --single-version-externally-managed

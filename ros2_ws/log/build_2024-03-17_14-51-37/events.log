@@ -1,0 +1,57 @@
+[0.000000] (-) TimerEvent: {}
+[0.005768] (-) JobUnselected: {'identifier': 'basics_ros2_multithreading'}
+[0.005895] (-) JobUnselected: {'identifier': 'client_pkg'}
+[0.006031] (-) JobUnselected: {'identifier': 'example36_pkg'}
+[0.006090] (-) JobUnselected: {'identifier': 'exercise31_pkg'}
+[0.006129] (-) JobUnselected: {'identifier': 'exercise42_pkg'}
+[0.006173] (-) JobUnselected: {'identifier': 'movement_pkg'}
+[0.006211] (-) JobUnselected: {'identifier': 'my_action_client'}
+[0.006249] (-) JobUnselected: {'identifier': 'my_action_server'}
+[0.006283] (-) JobUnselected: {'identifier': 'my_package'}
+[0.006317] (-) JobUnselected: {'identifier': 'publisher_pkg'}
+[0.006337] (-) JobUnselected: {'identifier': 'subscriber_pkg'}
+[0.006361] (-) JobUnselected: {'identifier': 't3_action_msg'}
+[0.006422] (logs_test) JobQueued: {'identifier': 'logs_test', 'dependencies': OrderedDict()}
+[0.006489] (logs_test) JobStarted: {'identifier': 'logs_test'}
+[0.099972] (-) TimerEvent: {}
+[0.200345] (-) TimerEvent: {}
+[0.301537] (-) TimerEvent: {}
+[0.401890] (-) TimerEvent: {}
+[0.502278] (-) TimerEvent: {}
+[0.602662] (-) TimerEvent: {}
+[0.703024] (-) TimerEvent: {}
+[0.803461] (-) TimerEvent: {}
+[0.903873] (-) TimerEvent: {}
+[1.005549] (-) TimerEvent: {}
+[1.105981] (-) TimerEvent: {}
+[1.206472] (-) TimerEvent: {}
+[1.282704] (logs_test) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/logs_test', 'build', '--build-base', '/home/user/ros2_ws/build/logs_test/build', 'install', '--prefix', '/home/user/ros2_ws/install/logs_test', '--record', '/home/user/ros2_ws/build/logs_test/install.log', '--single-version-externally-managed'], 'cwd': '/home/user/ros2_ws/src/logs_test', 'env': {'ROS_VERSION': '2', 'GAZEBO_MASTER_URI': 'http://1_simulation:11345', 'ROS_PYTHON_VERSION': '3', 'HOSTNAME': '1_xterm', 'PWD': '/home/user/ros2_ws/build/logs_test', 'PORT': '4000', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'ROS_IP': '', 'HOME': '/home/user', 'GAZEBO_PLUGIN_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:', 'LANG': 'en_US.UTF-8', 'GAZEBO_MODEL_DATABASE_URI': 'http://models.gazebosim.org', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/simulations/ros2_sims_ws/install/move_robot_as:/home/simulations/ros2_sims_ws/install/t3_action_msg:/home/simulations/ros2_sims_ws/install/services_pkg:/home/simulations/ros2_sims_ws/install/parameter_tests:/home/simulations/ros2_sims_ws/install/neo_simulation2:/home/simulations/ros2_sims_ws/install/aws_robomaker_small_warehouse_world:/home/user/ros2_ws/install/subscriber_pkg:/home/user/ros2_ws/install/publisher_pkg:/home/user/ros2_ws/install/my_package:/home/user/ros2_ws/install/my_action_server:/home/user/ros2_ws/install/my_action_client:/home/user/ros2_ws/install/movement_pkg:/home/user/ros2_ws/install/exercise42_pkg:/home/user/ros2_ws/install/exercise31_pkg:/home/user/ros2_ws/install/custom_interfaces:/home/user/ros2_ws/install/client_pkg:/home/user/ros2_ws/install/basics_ros2_multithreading:/opt/ros/humble', 'CMAKE_PREFIX_PATH': '/home/simulations/ros2_sims_ws/install/move_robot_as:/home/simulations/ros2_sims_ws/install/t3_action_msg:/home/simulations/ros2_sims_ws/install/neo_simulation2:/home/simulations/ros2_sims_ws/install/aws_robomaker_small_warehouse_world:/home/user/ros2_ws/install/custom_interfaces:/home/user/ros2_ws/install/basics_ros2_multithreading', 'GAZEBO_RESOURCE_PATH': '/usr/share/gazebo-11:/usr/share/gazebo-11:/usr/share/gazebo', 'COLCON_PREFIX_PATH': '/home/simulations/ros2_sims_ws/install:/home/user/ros2_ws/install', 'GAZEBO_MASTER_PORT': '11345', 'NVM_DIR': '/usr/local/share/shell/.nvm', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'PYTHONPATH': '/home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages:/home/simulations/ros2_sims_ws/install/t3_action_msg/local/lib/python3.10/dist-packages:/home/simulations/ros2_sims_ws/install/services_pkg/lib/python3.10/site-packages:/home/simulations/ros2_sims_ws/install/parameter_tests/lib/python3.10/site-packages:/home/user/ros2_ws/install/subscriber_pkg/lib/python3.10/site-packages:/home/user/ros2_ws/install/publisher_pkg/lib/python3.10/site-packages:/home/user/ros2_ws/install/my_package/lib/python3.10/site-packages:/home/user/ros2_ws/install/my_action_server/lib/python3.10/site-packages:/home/user/ros2_ws/install/my_action_client/lib/python3.10/site-packages:/home/user/ros2_ws/install/movement_pkg/lib/python3.10/site-packages:/home/user/ros2_ws/install/exercise42_pkg/lib/python3.10/site-packages:/home/user/ros2_ws/install/exercise31_pkg/lib/python3.10/site-packages:/home/user/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages:/home/user/ros2_ws/install/client_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/simulations/public_sim_ws/src/all/ros_basics_examples/python_course_class:/home/simulations/public_sim_ws/src/ros_basics_examples/python_course_class:/home/simulations/public_sim_ws/src/all/kinematics_course_utils/kinematics', 'COLCON': '1', 'TERM': 'xterm-color', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'SNAPCRAFT_BUILD_ENVIRONMENT': 'host', 'GAZEBO_MASTER_HOSTNAME': '1_simulation', 'DISPLAY': ':1', 'SHLVL': '2', 'NVM_CD_FLAGS': '', 'ROS_MASTER_URI': 'http://1_simulation:11311', 'ROS_HOSTNAME': '1_xterm', 'LD_LIBRARY_PATH': '/usr/local/cuda-10.2/lib64:/home/user/.catkin_ws_python3/src/TensorRT-7.0.0.11/lib:/home/simulations/ros2_sims_ws/install/t3_action_msg/lib:/home/user/ros2_ws/install/custom_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-10.2/lib64:/home/user/.catkin_ws_python3/src/TensorRT-7.0.0.11/lib::/usr/lib/x86_64-linux-gnu/gazebo-11/plugins::/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:', 'ROS_LOCALHOST_ONLY': '0', 'SLOT_SHELL_START_ID': '0', 'SLOT_PREFIX': '8d00445d-e9db-492c-b582-0659a5ab326c', 'LC_ALL': 'C', 'SOURCE_ROS1_WS': '', 'GAZEBO_MODEL_PATH': '/usr/share/gazebo-11/models:/home/simulations/ros2_sims_ws/install/aws_robomaker_small_warehouse_world/share/aws_robomaker_small_warehouse_world/worlds:/home/simulations/ros2_sims_ws/install/aws_robomaker_small_warehouse_world/share/aws_robomaker_small_warehouse_world/models:/usr/share/gazebo-11/models:/usr/share/gazebo-9/models:/usr/share/gazebo/models_robox', 'SLOT_JENKINS_PORT': '25055', 'SLOT_SYSTEMD': 'False', 'PATH': '/opt/ros/humble/bin:/usr/local/share/shell/.nvm/versions/node/v8.17.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/user/.cargo/bin:/home/user/.cargo/bin', 'SELECTED_ROS_DISTRO': 'humble', 'NVM_BIN': '/usr/local/share/shell/.nvm/versions/node/v8.17.0/bin', 'NODE_VERSION': 'v8.17.0', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_DISTRO': 'humble', 'GAZEBO_VERBOSE': '0', 'OGRE_RESOURCE_PATH': '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0', 'OLDPWD': '/home/user/ros2_ws/src/logs_test/launch', 'SOURCE_ROS2_WS': 'True', 'SLOT_ROSBRIDGE_PORT': '20001', '_': '/usr/bin/env'}, 'shell': False}
+[1.306588] (-) TimerEvent: {}
+[1.406922] (-) TimerEvent: {}
+[1.507292] (-) TimerEvent: {}
+[1.607668] (-) TimerEvent: {}
+[1.708097] (-) TimerEvent: {}
+[1.770214] (logs_test) StdoutLine: {'line': b'running egg_info\n'}
+[1.771576] (logs_test) StdoutLine: {'line': b'writing ../../build/logs_test/logs_test.egg-info/PKG-INFO\n'}
+[1.771960] (logs_test) StdoutLine: {'line': b'writing dependency_links to ../../build/logs_test/logs_test.egg-info/dependency_links.txt\n'}
+[1.772253] (logs_test) StdoutLine: {'line': b'writing entry points to ../../build/logs_test/logs_test.egg-info/entry_points.txt\n'}
+[1.772509] (logs_test) StdoutLine: {'line': b'writing requirements to ../../build/logs_test/logs_test.egg-info/requires.txt\n'}
+[1.772705] (logs_test) StdoutLine: {'line': b'writing top-level names to ../../build/logs_test/logs_test.egg-info/top_level.txt\n'}
+[1.778812] (logs_test) StdoutLine: {'line': b"reading manifest file '../../build/logs_test/logs_test.egg-info/SOURCES.txt'\n"}
+[1.780070] (logs_test) StdoutLine: {'line': b"writing manifest file '../../build/logs_test/logs_test.egg-info/SOURCES.txt'\n"}
+[1.780275] (logs_test) StdoutLine: {'line': b'running build\n'}
+[1.780400] (logs_test) StdoutLine: {'line': b'running build_py\n'}
+[1.780617] (logs_test) StdoutLine: {'line': b'running install\n'}
+[1.781024] (logs_test) StdoutLine: {'line': b'running install_lib\n'}
+[1.783256] (logs_test) StdoutLine: {'line': b'running install_data\n'}
+[1.784614] (logs_test) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.786661] (logs_test) StdoutLine: {'line': b"removing '/home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages/logs_test-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.787286] (logs_test) StdoutLine: {'line': b'Copying ../../build/logs_test/logs_test.egg-info to /home/user/ros2_ws/install/logs_test/lib/python3.10/site-packages/logs_test-0.0.0-py3.10.egg-info\n'}
+[1.788970] (logs_test) StdoutLine: {'line': b'running install_scripts\n'}
+[1.808228] (-) TimerEvent: {}
+[1.836439] (logs_test) StdoutLine: {'line': b'Installing logger_example_node script to /home/user/ros2_ws/install/logs_test/lib/logs_test\n'}
+[1.838120] (logs_test) StdoutLine: {'line': b"writing list of installed files to '/home/user/ros2_ws/build/logs_test/install.log'\n"}
+[1.884582] (logs_test) CommandEnded: {'returncode': 0}
+[1.909872] (-) TimerEvent: {}
+[1.917295] (logs_test) JobEnded: {'identifier': 'logs_test', 'rc': 0}
+[1.918909] (-) EventReactorShutdown: {}
