@@ -1,5 +1,66 @@
 # ROS2-Python
 
+## 1 Workspace
+
+### **工作空间是什么**
+
+类似的，在ROS机器人开发中，我们针对机器人某些功能进行代码开始时，各种编写的代码、参数、脚本等文件，也需要放置在某一个文件夹里进行管理，这个文件夹在ROS系统中就叫做**工作空间**。
+
+所以工作空间是一个存放项目开发相关文件的文件夹，也是**开发过程中存放所有资料的大本营**。
+
+ROS系统中一个典型的工作空间结构如图所示，这个dev_ws就是工作空间的根目录，里边会有四个子目录，或者叫做四个子空间。
+
+- **src，代码空间**，未来编写的代码、脚本，都需要人为的放置到这里；
+- **build，编译空间**，保存编译过程中产生的中间文件；
+- **install，安装空间**，放置编译得到的可执行文件和脚本；
+- **log，日志空间**，编译和运行过程中，保存各种警告、错误、信息等日志。
+
+总体来讲，这四个空间的文件夹，我们绝大部分操作都是在src中进行的，编译成功后，就会执行install里边的结果，build和log两个文件夹用的很少。
+
+### **创建工作空间**
+
+了解了工作空间的概念和结果，接下来我们可以使用如下命令创建一个工作空间，并且下载教程的代码：
+
+```
+$ mkdir -p ~/dev_ws/src
+$ cd ~/dev_ws/src
+$ git clone https://gitee.com/guyuehome/ros2_21_tutorials.git
+```
+
+### **自动安装依赖**
+
+我们从社区中下载的各种代码，多少都会有一些依赖，我们可以手动一个一个安装，也可以使用rosdep工具自动安装：
+
+```
+解释$ sudo apt install -y python3-pip
+$ sudo pip3 install rosdepc
+$ sudo rosdepc init
+$ rosdepc update
+$ cd ..
+$ rosdepc install -i --from-path src --rosdistro humble -y
+```
+
+### **编译工作空间**
+
+依赖安装完成后，就可以使用如下命令编译工作空间啦，如果有缺少的依赖，或者代码有错误，编译过程中会有报错，否则编译过程应该不会出现任何错误：
+
+```
+$ sudo apt install python3-colcon-ros
+$ cd ~/dev_ws/
+$ colcon build
+```
+
+### **设置环境变量**
+
+编译成功后，为了让系统能够找到我们的功能包和可执行文件，还需要设置环境变量：
+
+```
+$ source install/local_setup.sh # 仅在当前终端生效
+$ echo " source ~/dev_ws/install/local_setup.sh" >> ~/.bashrc # 所有终端均生效
+```
+
+至此，我们就完成了工作空间的创建、编译和配置
+
 ## 2. Basic concept
 
 ### 2.1什么是 Package
@@ -6335,6 +6396,117 @@ ros2 doctor
 ```
 ros2 doctor --report
 ```
+
+
+
+## 9 Ros2 参数
+
+类似C++编程中的全局变量，可以便于在多个程序中共享某些数据，**参数是ROS机器人系统中的全局字典，可以运行多个节点中共享数据。**
+
+### **全局字典**
+
+在ROS系统中，参数是以**全局字典**的形态存在的，什么叫字典？就像真实的字典一样，由名称和数值组成，也叫做键和值，合成**键值**。或者我们也可以理解为，就像编程中的参数一样，有一个参数名 ，然后跟一个等号，后边就是参数值了，在使用的时候，访问这个参数名即可。
+
+**所以我们可以通过新建一个节点，用于集中修改其他节点中的参数值。**
+
+### **可动态监控**
+
+在ROS2中，参数的特性非常丰富，比如某一个节点共享了一个参数，其他节点都可以访问，如果某一个节点对参数进行了修改，其他节点也有办法立刻知道，从而获取最新的数值。这在**参数的高级编程**中，大家都可能会用到。
+
+### **查看参数列表**
+
+当前系统中有哪些参数呢？我们可以启动一个终端，并使用如下命令查询：
+
+```
+ros2 param list
+```
+
+### **参数查询与修改**
+
+如果想要查询或者修改某个参数的值，可以在param命令后边跟get或者set子命令：
+
+```
+ros2 param describe turtlesim background_b   # 查看某个参数的描述信息
+ros2 param get turtlesim background_b        # 查询某个参数的值
+ros2 param set turtlesim background_b 10     # 修改某个参数的值
+```
+
+### **参数文件保存与加载**
+
+一个一个查询/修改参数太麻烦了，不如试一试参数文件，ROS中的参数文件使用yaml格式，可以在param命令后边跟dump子命令，将某个节点的参数都保存到文件中，或者通过load命令一次性加载某个参数文件中的所有内容：
+
+```
+ros2 param dump turtlesim >> turtlesim.yaml  # 将某个节点的参数保存到参数文件中
+ros2 param load turtlesim turtlesim.yaml     # 一次性加载某一个文件中的所有参数
+```
+
+### **参数编程**
+
+#### **运行效果**
+
+启动一个终端，先运行第一句指令，启动param_declare节点，终端中可以看到循环打印的日志信息，其中的“mbot”就是我们设置的一个参数值，参数名称是“robot_name”，通过命令行修改这个参数，看下终端中会发生什么？
+
+```
+ros2 run learning_parameter param_declare
+ros2 param set param_declare robot_name turtle # 修改robot_name的值
+```
+
+#### **代码解析**
+
+我们来看下在代码中，如何声明、创建、修改一个参数的值。
+
+learning_parameter/param_declare.py
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+@作者: 古月居(www.guyuehome.com)
+@说明: ROS2参数示例-创建、读取、修改参数
+"""
+
+import rclpy                                     # ROS2 Python接口库
+from rclpy.node   import Node                    # ROS2 节点类
+
+class ParameterNode(Node):
+    def __init__(self, name):
+        super().__init__(name)                                    # ROS2节点父类初始化
+        self.timer = self.create_timer(2, self.timer_callback)    # 创建一个定时器（单位为秒的周期，定时执行的回调函数）
+        self.declare_parameter('robot_name', 'mbot')              # 创建一个参数，并设置参数的默认值
+
+    def timer_callback(self):                                      # 创建定时器周期执行的回调函数
+        robot_name_param = self.get_parameter('robot_name').get_parameter_value().string_value   # 从ROS2系统中读取参数的值
+
+        self.get_logger().info('Hello %s!' % robot_name_param)     # 输出日志信息，打印读取到的参数值
+
+        new_name_param = rclpy.parameter.Parameter('robot_name',   # 重新将参数值设置为指定值
+                            rclpy.Parameter.Type.STRING, 'mbot')
+        all_new_parameters = [new_name_param]
+        self.set_parameters(all_new_parameters)                    # 将重新创建的参数列表发送给ROS2系统
+
+def main(args=None):                                 # ROS2节点主入口main函数
+    rclpy.init(args=args)                            # ROS2 Python接口初始化
+    node = ParameterNode("param_declare")            # 创建ROS2节点对象并进行初始化
+    rclpy.spin(node)                                 # 循环等待ROS2退出
+    node.destroy_node()                              # 销毁节点对象
+    rclpy.shutdown()                                 # 关闭ROS2 Python接口
+
+```
+
+完成代码的编写后需要设置功能包的编译选项，让系统知道Python程序的入口，打开功能包的setup.py文件，加入如下入口点的配置：
+
+```
+entry_points={
+    'console_scripts': [
+     'param_declare          = learning_parameter.param_declare:main',
+    ],
+},
+```
+
+
+
+
 
 
 
